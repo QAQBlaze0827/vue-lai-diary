@@ -32,7 +32,7 @@
                         </select>
                     </div>
                     <div class="form-floating pt-3 mb-3">
-                        <!-- <input class="form-control" v-model="money" type="text" placeholder="金額" id="floatingInput" required> -->
+                        <input class="form-control" v-model="money" type="text" placeholder="金額" id="floatingInput" required>
                         <label for="floatingInput">金額</label>
                     </div>
                 </div>
@@ -52,6 +52,8 @@
 <script setup lang="ts">
 import Person from './components/Person.vue'
 import Diary from './components/Diary.vue'
+import {ref} from 'vue'
+let money = ref(null)
 </script>
 
 <style scoped></style>
