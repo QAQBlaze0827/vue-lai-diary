@@ -32,12 +32,12 @@
                         </select>
                     </div>
                     <div class="form-floating pt-3 mb-3">
-                        <input class="form-control" v-model="money" type="text" placeholder="金額" id="floatingInput" required>
+                        <!-- <input class="form-control" v-model="money" type="text" placeholder="金額" id="floatingInput" required> -->
                         <label for="floatingInput">金額</label>
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <input v-model="money" type="text">
+                    <!-- <input v-model="money" type="text"> -->
                 </div>
                 <!-- 這邊可能作成展示 -->
                 <div class="col-lg-3 bg-primary">
@@ -50,7 +50,7 @@
 </template>
 
 <script setup lang="ts">
-import Person from './components/person.vue'
+import Person from './components/Person.vue'
 import Diary from './components/Diary.vue'
 </script>
 
