@@ -24,16 +24,20 @@
                 <!-- 這邊弄成輸入消費金額、總類-->
                 <div class="col-lg-3">
                     <div class="pt-3">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>總類</option>
-                            <option value="breakfast">早餐</option>
+                        <select class="form-select" v-model="category" aria-label="Default select example">
+                            <option disabled value="">總類</option>
+                            <option value="breakfast" >早餐</option>
                             <option value="lunch">午餐</option>
                             <option value="dinner">晚餐</option>
                         </select>
                     </div>
-                    <div class="form-floating pt-3 mb-3">
+                    <div class="form-floating mt-2 mb-2">
                         <input class="form-control" v-model="money" type="text" placeholder="金額" id="floatingInput" required>
                         <label for="floatingInput">金額</label>
+                    </div>
+                    <div class="form-floating mt-2 mb-2">
+                        <input class="form-control" v-model="describe" type="text" placeholder="描述" id="floatingInput" required>
+                        <label for="floatingInput">描述</label>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -41,7 +45,9 @@
                 </div>
                 <!-- 這邊可能作成展示 -->
                 <div class="col-lg-3 bg-primary">
-                    <span>總類</span>
+                    <span>{{ category }}</span>
+                    <br>
+                    <span>{{ money }}</span>
                 </div>
             </div>
         </div>
@@ -52,8 +58,11 @@
 <script setup lang="ts">
 import Person from './components/Person.vue'
 import Diary from './components/Diary.vue'
-import {ref} from 'vue'
-let money = ref(null)
+import { ref } from 'vue'
+import type { Ref } from 'vue'
+let money:Ref<number|null> = ref(null)
+let category:Ref<string|null> = ref('')
+let describe:Ref<string|null> = ref('')
 </script>
 
 <style scoped></style>
